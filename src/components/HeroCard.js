@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '../css/HeroCard.css';
 
@@ -8,7 +9,9 @@ function HeroCard(props) {
     <div className="hero-card">
       <p>{props.name}</p>
       <p>{props.role}</p>
-      <img src = {props.iconURL} />
+      <Link to={`/heroes/${props.name}`}>
+        <img src = {props.iconURL} alt = {props.name} />
+      </Link>
     </div>
   );
 
