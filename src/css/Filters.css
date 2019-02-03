@@ -1,0 +1,8 @@
+div.role-icons img {
+  max-width: 52px;
+  max-height: 52px;
+}
+
+img.selected {
+  box-shadow: 1px 1px 1px 1px teal;
+}
