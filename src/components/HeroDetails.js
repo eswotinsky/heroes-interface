@@ -11,8 +11,7 @@ function HeroDetails(props) {
 }
 
 HeroDetails.propTypes = {
-  name: PropTypes.string,
-  role: PropTypes.string
+  selectedHeroData: PropTypes.object.isRequired
 }
 
 export default HeroDetails;

@@ -19,6 +19,7 @@ class App extends Component {
       selectedRoles: [],
       isLoading: false
     };
+    this.handleHeroSelection = this.handleHeroSelection.bind(this);
     this.handleFilterChange = this.handleFilterChange.bind(this);
   }
 
@@ -30,6 +31,11 @@ class App extends Component {
         heroListMaster: response.data,
         isLoading: false,
       }))
+  }
+
+  handleHeroSelection(clickedHero) {
+    let newSelectedHeroData = this.state.heroListMaster.filter(hero => hero.name === clickedHero)[0];
+    this.setState({selectedHeroData: newSelectedHeroData});
   }
 
   handleFilterChange(clickedRole) {
@@ -54,6 +60,7 @@ class App extends Component {
               heroList={this.state.heroList}
               selectedRoles={this.state.selectedRoles}
               isLoading={this.state.isLoading}
+              onHeroSelection={this.handleHeroSelection}
               onFilterChange={this.handleFilterChange}
             />}
           />

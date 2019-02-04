@@ -13,6 +13,7 @@ function Home(props) {
       <HeroList
         heroList={props.heroList}
         isLoading={props.isLoading}
+        onHeroSelection={props.onHeroSelection}
       />
     </div>
   );
@@ -23,6 +24,7 @@ Home.propTypes = {
   heroList: PropTypes.array.isRequired,
   selectedRoles: PropTypes.array.isRequired,
   isLoading: PropTypes.bool.isRequired,
+  onHeroSelection: PropTypes.func.isRequired,
   onFilterChange: PropTypes.func.isRequired
 }
 

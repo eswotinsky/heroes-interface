@@ -30,6 +30,7 @@ function HeroList(props) {
           name = {hero.name}
           role = {hero.role}
           iconURL = {Object.values(hero.icon_url)[0]}
+          onHeroSelection = {props.onHeroSelection}
           key = {heroId}
         />
       })}
@@ -40,7 +41,8 @@ function HeroList(props) {
 
 HeroList.propTypes = {
   heroList: PropTypes.array,
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
+  onHeroSelection: PropTypes.func.isRequired
 }
 
 export default HeroList;
