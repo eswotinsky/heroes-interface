@@ -1,3 +1,22 @@
 div.hero-card {
-  border: 1px solid red;
+  position: relative;
+  text-shadow: 2px 2px white;
+  width: 92px;
+  height: 93px;
+}
+
+div.title-plate {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+img.role-icon {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 0;
+  right: 0;
 }
