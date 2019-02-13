@@ -12,10 +12,7 @@ class App extends Component {
     this.state = {
       heroList: [],
       heroListMaster: [],
-      selectedHeroData: {
-        name: "TestName",
-        role: "TestRole"
-      },
+      selectedHeroData: {},
       selectedRoles: [],
       isLoading: false
     };
@@ -41,7 +38,8 @@ class App extends Component {
   handleFilterChange(clickedRole) {
     let newSelectedRoles = this.state.selectedRoles;
     newSelectedRoles.includes(clickedRole) ? newSelectedRoles = newSelectedRoles.filter(role => role !== clickedRole) : newSelectedRoles.push(clickedRole);
-    let newHeroList = this.state.heroListMaster.filter(hero => newSelectedRoles.includes(hero.role));
+    let newHeroList;
+    newSelectedRoles.length === 0 ? newHeroList = this.state.heroListMaster : newHeroList = this.state.heroListMaster.filter(hero => newSelectedRoles.includes(hero.role));
     this.setState({
       heroList: newHeroList,
       selectedRoles: newSelectedRoles

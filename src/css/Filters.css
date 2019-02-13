@@ -3,6 +3,6 @@ div.role-icons img {
   max-height: 52px;
 }
 
-img.selected {
-  box-shadow: 1px 1px 1px 1px teal;
+div.role-icons img:not(.selected) {
+  opacity: 0.6;
 }

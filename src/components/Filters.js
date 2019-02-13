@@ -4,9 +4,18 @@ import Warrior from '../img/warrior.png';
 import Assassin from '../img/assassin.png';
 import Support from '../img/support.png';
 import Specialist from '../img/specialist.png';
+import Multiclass from '../img/multiclass.png';
 import '../css/Filters.css';
 
 function Filters(props) {
+
+  const roleIcons = {
+    "Warrior": Warrior,
+    "Assassin": Assassin,
+    "Support": Support,
+    "Specialist": Specialist,
+    "Multiclass": Multiclass
+  }
 
   function handleFilterChange(event) {
     event.preventDefault();
@@ -16,10 +25,15 @@ function Filters(props) {
   return (
     <div>
       <div className="role-icons">
-        <img src={Warrior} onClick={handleFilterChange} alt="Warrior" className={props.selectedRoles.includes("Warrior") ? 'selected' : ''} />
-        <img src={Assassin} onClick={handleFilterChange} alt="Assassin" className={props.selectedRoles.includes("Assassin") ? 'selected' : ''} />
-        <img src={Support} onClick={handleFilterChange} alt="Support" className={props.selectedRoles.includes("Support") ? 'selected' : ''} />
-        <img src={Specialist} onClick={handleFilterChange} alt="Specialist" className={props.selectedRoles.includes("Specialist") ? 'selected' : ''} />
+        {Object.keys(roleIcons).map((roleIcon, index) =>
+          <img
+            src={roleIcons[roleIcon]}
+            alt={roleIcon}
+            onClick={handleFilterChange}
+            className={props.selectedRoles.includes(roleIcon) ? 'selected' : ''}
+            key={index}
+          />
+        )}
       </div>
     </div>
   );

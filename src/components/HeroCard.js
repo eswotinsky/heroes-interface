@@ -5,15 +5,18 @@ import Warrior from '../img/warrior.png';
 import Assassin from '../img/assassin.png';
 import Support from '../img/support.png';
 import Specialist from '../img/specialist.png';
+import Multiclass from '../img/multiclass.png';
 import '../css/HeroCard.css';
 
 function HeroCard(props) {
+  //TODO: mouseover visual effects
 
   const roleIcons = {
     "Warrior": Warrior,
     "Assassin": Assassin,
     "Support": Support,
-    "Specialist": Specialist
+    "Specialist": Specialist,
+    "Multiclass": Multiclass
   }
 
   function handleHeroSelection() {
@@ -21,13 +24,13 @@ function HeroCard(props) {
   }
 
   return (
-    <div className="hero-card" style={{backgroundImage: `url(${props.iconURL})`}}>
+    <div>
       <Link to={`/heroes/${props.name}`} onClick={handleHeroSelection}>
-        <img src={roleIcons[props.role]} className="role-icon" alt={props.name} />
-        <div className="title-plate">
-          <h4>{props.name}</h4>
+        <div className="hero-card-round" style={{backgroundImage: `url(${props.iconURL})`}}>
+            <img src={roleIcons[props.role]} className="role-icon" alt={props.name} />
         </div>
       </Link>
+      <h4>{props.name}</h4>
     </div>
   );
 
