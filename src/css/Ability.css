@@ -1,0 +1,21 @@
+div.ability {
+  border: 1px solid red;
+  display: flex;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+div.ability-details {
+  flex-direction: column;
+  text-align: left;
+  margin-left: 2%;
+}
+
+p.ability-title {
+  font-weight: bold;
+}
+
+div.ability img {
+  min-width: 92px;
+  height: 93px;
+  background-color: red;
+}

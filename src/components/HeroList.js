@@ -7,11 +7,7 @@ import '../css/HeroList.css';
 function HeroList(props) {
 
   if (props.isLoading) {
-    return (
-      <div>
-        <Loading />
-      </div>
-    )
+    return <Loading />
   }
 
   if (props.heroList.length === 0) {
@@ -24,16 +20,15 @@ function HeroList(props) {
 
   return (
     <div className="hero-list">
-      {Object.keys(props.heroList).map(function(heroId) {
-        var hero = props.heroList[heroId];
-        return <HeroCard
+      {Object.values(props.heroList).map(hero =>
+        <HeroCard
           name = {hero.name}
           role = {hero.role}
           iconURL = {Object.values(hero.icon_url)[0]}
           onHeroSelection = {props.onHeroSelection}
-          key = {heroId}
+          key = {hero.attribute_id}
         />
-      })}
+      )}
     </div>
   );
 
