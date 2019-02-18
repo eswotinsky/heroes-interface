@@ -1,3 +1,10 @@
+div.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+}
+
 div.spinner {
   border: 16px solid #f3f3f3;
   border-top: 16px solid #5bc0de;
