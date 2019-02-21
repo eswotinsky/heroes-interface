@@ -1,21 +1,40 @@
 div.ability {
-  border: 1px solid red;
   display: flex;
   background: rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.2em;
+  padding: 1em;
 }
 
-div.ability-details {
+div.ability-details-container {
   flex-direction: column;
   text-align: left;
-  margin-left: 2%;
+  font-size: smaller;
+  margin-left: 5%;
+  width: 65%;
 }
 
-p.ability-title {
+div.ability-icon {
+  width: 15%;
+  max-width: 100px;
+  background-color: cornflowerblue;
+}
+
+div.ability-hotkey {
+  display: inline;
+}
+
+div.ability-title {
   font-weight: bold;
+  font-size: 1.5em;
+  margin: 0.5em 0 0.5em 0;
+  text-transform: uppercase;
 }
 
-div.ability img {
-  min-width: 92px;
-  height: 93px;
-  background-color: red;
+span.ability-cost {
+  color: darkblue;
+  margin-right: 1em;
+}
+
+div.ability-cost-cooldown {
+  margin-bottom: 0.5em;
 }

@@ -8,12 +8,39 @@ function Ability(props) {
 
   return (
     <div className="ability">
-      <img src={props.abilityData.icon} alt={props.abilityData.title} />
-      <div className="ability-details">
-        <p className="ability-title">{props.abilityData.title} ({props.abilityData.hotkey})</p>
-        <p>{props.abilityData.mana_cost ? props.abilityData.mana_cost + " mana": "No mana cost"}</p>
-        <p>Cooldown: {props.abilityData.cooldown} seconds</p>
-        <p>{props.abilityData.description}</p>
+
+      <div className="ability-icon">
+        <img src={props.abilityData.icon} alt={props.abilityData.title} />
+      </div>
+
+      <div className="ability-details-container">
+
+        <div className="ability-title">
+          {props.abilityData.title}
+          {props.abilityData.hotkey === null
+            ? null
+            : <div className="ability-hotkey"> ({props.abilityData.hotkey})</div>
+          }
+        </div>
+
+        <div className="ability-cost-cooldown">
+
+          {props.abilityData.hotkey === "D" || props.abilityData.hotkey === null
+            ? null
+            : <span className="ability-cost">{props.abilityData.mana_cost ? props.abilityData.mana_cost + " mana": "No mana cost"}</span>
+          }
+
+          {props.abilityData.cooldown === null
+            ? null
+            : <span>Cooldown: {props.abilityData.cooldown} seconds</span>
+          }
+
+        </div>
+
+        <p className="ability-description">
+          {props.abilityData.description}
+        </p>
+
       </div>
     </div>
   );

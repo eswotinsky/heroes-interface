@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Ability from './Ability';
+import '../css/HeroDetails.css';
 
 function HeroDetails(props) {
 
@@ -9,32 +10,44 @@ function HeroDetails(props) {
 
   return (
     <div className="hero-details">
-      <h1>{props.selectedHeroData.name} details</h1>
-      <h2>Role: {props.selectedHeroData.role}</h2>
+      <img
+        className="hero-image"
+        src={Object.values(props.selectedHeroData.icon_url)[0]}
+      />
+      <h1>{props.selectedHeroData.name}</h1>
+      <h2>{props.selectedHeroData.type} {props.selectedHeroData.role}</h2>
+
+      <h3>Trait</h3>
+      {props.selectedHeroData.abilities.filter(ability => ability.trait === true).map((traitAbility, name) =>
+        <Ability
+          abilityData={traitAbility}
+          key={name}
+        />
+      )}
 
       <h3>Primary Abilities</h3>
-      {props.selectedHeroData.abilities.filter(ability => primaryHotkeys.includes(ability.hotkey)).map((primaryAbility, index) =>
+      {props.selectedHeroData.abilities.filter(ability => primaryHotkeys.includes(ability.hotkey)).map((primaryAbility, name) =>
         <Ability
           abilityData={primaryAbility}
-          key={index}
+          key={name}
         />
       )}
 
       <h3>Heroic Abilities</h3>
-      {props.selectedHeroData.abilities.filter(ability => ability.hotkey === "R").map((heroicAbility, index) =>
+      {props.selectedHeroData.abilities.filter(ability => ability.hotkey === "R").map((heroicAbility, name) =>
         <Ability
           abilityData={heroicAbility}
-          key={index}
+          key={name}
         />
       )}
 
       {props.selectedHeroData.abilities.some(ability => ability.hotkey === "1") &&
         <h3>Bonus Abilities</h3>
       }
-      {props.selectedHeroData.abilities.filter(ability => bonusHotkeys.includes(ability.hotkey)).map((bonusAbility, index) =>
+      {props.selectedHeroData.abilities.filter(ability => bonusHotkeys.includes(ability.hotkey)).map((bonusAbility, name) =>
         <Ability
           abilityData={bonusAbility}
-          key={index}
+          key={name}
         />
       )}
 
