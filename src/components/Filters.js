@@ -27,6 +27,7 @@ function Filters(props) {
       <div className="role-icons">
         {Object.keys(roleIcons).map((roleIcon, index) =>
           <img
+            title={roleIcon}
             src={roleIcons[roleIcon]}
             alt={roleIcon}
             onClick={handleFilterChange}

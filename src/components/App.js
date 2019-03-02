@@ -46,12 +46,10 @@ class App extends Component {
     });
   }
 
-
   render() {
     return (
       <div className="App">
         <Switch>
-
           <Route exact path="/" render={(props) =>
             <Home
               {...props}
@@ -62,18 +60,14 @@ class App extends Component {
               onFilterChange={this.handleFilterChange}
             />}
           />
-
           <Route path="/heroes/:hero" render={(props) =>
             <HeroDetails {...props} selectedHeroData={this.state.selectedHeroData} />}
           />
-
           <Route component={Error404} />
-
         </Switch>
       </div>
     );
   }
 }
-
 
 export default App;
