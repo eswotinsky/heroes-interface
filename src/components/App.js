@@ -22,7 +22,7 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({isLoading: true});
-    axios.get('http://hotsapi.net/api/v1/heroes')
+    axios.get('https://hotsapi.net/api/v1/heroes')
       .then(response => this.setState({
         heroList: response.data,
         heroListMaster: response.data,
