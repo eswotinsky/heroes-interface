@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Heroes Interface
 
-## Available Scripts
+A React-based interface for viewing information on characters from Blizzard's Heroes of the Storm. Includes role-based filtering of displayed heroes and hero-specific details pages.
 
-In the project directory, you can run:
+View a live demo at [heroes-interface.netlify.com](https://heroes-interface.netlify.com]).
 
-### `npm start`
+## Structure
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Data for all heroes is gathered from HotsAPI on app load. Visible heroes on the home page are a a subset of this data, dependent on the selection of filters.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Component structure and data flow is as follows:
+![alt text](./src/img/appflow.png)
 
-### `npm test`
+## Setup
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run this project locally:
 
-### `npm run build`
+1. [Install Node.js and npm](https://www.npmjs.com/get-npm), if not already present in your local environment.
+2. Clone this repository.
+3. Within your preferred shell, navigate to the project folder and run the following:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  ```npm install```
+(this may take a moment to complete)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+  ```npm run start```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once running, the app can be accessed at [http://localhost:3000/](http://localhost:3000/).
 
-### `npm run eject`
+### Support and Contact Details
+If you encounter any bugs or would like to make suggestions regarding this project, please feel free to open an issue within the repository.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Coming Soon, Hopefully
+• Filter heroes by universe (not readily supported by available data set)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+• Talent information on hero details page
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Known Issues
+• Refreshing a hero's details page will result in a loss of state, rendering necessary data inaccessible until navigating back to the home page.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+• Certain data is currently missing from the data set, including images for recently-released heroes as well as all ability icon images.
 
-## Learn More
+• Ability display is inelegant for the select few heroes with more than one set of abilities bound to the Q, W, and E hotkeys.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This project is distributed under the MIT License - see the [LICENSE](LICENSE) file for details.
