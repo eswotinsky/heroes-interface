@@ -2,7 +2,7 @@
 
 A React-based interface for viewing information on characters from Blizzard's Heroes of the Storm. Includes role-based filtering of displayed heroes and hero-specific details pages.
 
-View a live demo at [heroes-interface.netlify.com](https://heroes-interface.netlify.com]).
+View a live demo at [heroes-interface.netlify.com](https://heroes-interface.netlify.com).
 
 ## Structure
 
