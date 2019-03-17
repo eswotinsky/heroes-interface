@@ -19,13 +19,9 @@ function HeroCard(props) {
     "Multiclass": Multiclass
   }
 
-  function handleHeroSelection() {
-    props.onHeroSelection(props.name);
-  }
-
   return (
     <div>
-      <Link to={`/heroes/${props.name}`} onClick={handleHeroSelection}>
+      <Link to={`/heroes/${props.name}`} >
         <div className="hero-card-round" style={{backgroundImage: `url(${props.iconURL})`}}>
             <img src={roleIcons[props.role]} className="role-icon" alt={props.name} />
         </div>
@@ -39,8 +35,7 @@ function HeroCard(props) {
 HeroCard.propTypes = {
     name: PropTypes.string.isRequired,
     role: PropTypes.string.isRequired,
-    iconURL: PropTypes.string,
-    onHeroSelection: PropTypes.func.isRequired
+    iconURL: PropTypes.string
 }
 
 export default HeroCard;

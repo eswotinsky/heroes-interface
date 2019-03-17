@@ -5,6 +5,8 @@ import '../css/HeroDetails.css';
 
 function HeroDetails(props) {
 
+  window.scrollTo(0,0);
+
   const primaryHotkeys = ["Q", "W", "E"];
   const bonusHotkeys = ["1", "2", "3", "4", "5", "6"];
 
@@ -13,6 +15,7 @@ function HeroDetails(props) {
       <img
         className="hero-image"
         src={Object.values(props.selectedHeroData.icon_url)[0]}
+        alt={props.selectedHeroData.name}
       />
       <h1>{props.selectedHeroData.name}</h1>
       <h2>{props.selectedHeroData.type} {props.selectedHeroData.role}</h2>

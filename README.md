@@ -6,7 +6,7 @@ View a live demo at [heroes-interface.netlify.com](https://heroes-interface.netl
 
 ## Structure
 
-Data for all heroes is gathered from HotsAPI on app load. Visible heroes on the home page are a a subset of this data, dependent on the selection of filters.
+Data for all heroes is gathered from [HotsAPI](https://hotsapi.net/) on app load. Visible heroes on the home page are a a subset of this data, dependent on the selection of filters.
 
 Component structure and data flow is as follows:
 ![alt text](./src/img/appflow.png)
@@ -39,7 +39,7 @@ If you encounter any bugs or would like to make suggestions regarding this proje
 
 • Certain data is currently missing from the data set, including images for recently-released heroes as well as all ability icon images.
 
-• Ability display is inelegant for the select few heroes with more than one set of abilities bound to the Q, W, and E hotkeys.
+• Ability display is inelegant for the select few heroes with more than one set of abilities bound to the Q, W, and E hotkeys (e.g. Valeera's visible vs. stealthed states).
 
 ### License
 

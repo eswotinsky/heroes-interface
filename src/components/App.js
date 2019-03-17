@@ -16,7 +16,6 @@ class App extends Component {
       selectedRoles: [],
       isLoading: false
     };
-    this.handleHeroSelection = this.handleHeroSelection.bind(this);
     this.handleFilterChange = this.handleFilterChange.bind(this);
   }
 
@@ -28,11 +27,6 @@ class App extends Component {
         heroListMaster: response.data,
         isLoading: false,
       }))
-  }
-
-  handleHeroSelection(clickedHero) {
-    let newSelectedHeroData = this.state.heroListMaster.filter(hero => hero.name === clickedHero)[0];
-    this.setState({selectedHeroData: newSelectedHeroData});
   }
 
   handleFilterChange(clickedRole) {
@@ -61,7 +55,7 @@ class App extends Component {
             />}
           />
           <Route path="/heroes/:hero" render={(props) =>
-            <HeroDetails {...props} selectedHeroData={this.state.selectedHeroData} />}
+            <HeroDetails {...props} selectedHeroData={this.state.heroListMaster.filter(h => h.name === props.match.params.hero)[0]} />}
           />
           <Route component={Error404} />
         </Switch>
