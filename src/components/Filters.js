@@ -41,7 +41,8 @@ function Filters(props) {
 }
 
 Filters.propTypes = {
-  onFilterChange: PropTypes.func
+  onFilterChange: PropTypes.func.isRequired,
+  selectedRoles: PropTypes.array.isRequired
 };
 
 export default Filters;
